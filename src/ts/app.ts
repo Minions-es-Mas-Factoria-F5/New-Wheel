@@ -1,11 +1,9 @@
-import {btnCall} from "./components/participantsList";
-import {notRead} from "./components/roulette"; 
-
+import { list } from "./components/participantsForm";
+import { go } from "./components/roulette2";
 
 function app(){
-    btnCall();
-    notRead();
+    go();
+    list();
 }
 
 app();
-
