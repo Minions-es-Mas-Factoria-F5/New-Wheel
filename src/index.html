@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirate wheel of...</title>
+    <link rel="stylesheet" href="./sass/backup.scss">
+</head>
+<body>
+    <header class="background-header">
+        <a id="logo" href="index.html"><img class="logo-img" src="./assets/img-logo-deskpot.png" alt="Logotipo"></a>
+    </header>
+
+    <main>
+        <section id="roulette-game" class="contenedor">
+            
+            <div id="roulete-container">     
+                <div id="arrow-mark" class="mark-winner"></div>                                                                         
+                <div id="roulette-names" class="concursantes">    
+                    <div id="roulette-background">    
+                        <canvas id="idcanvas" height="350" width="350"></canvas>                                                      
+                        <div id="roulette-inner-circle-shape"></div>               
+                    </div>             
+                </div>           
+            </div>
+            <div id="buttons-place">                                                 
+                <input type="button" id="start-btn" value="Iniciar"></input>
+                <input type="button" id="restart-btn" value="Reiniciar"></input>
+            </div>   
+        </section>
+        <div class="container-participants">
+            <input type="text" id="input-add-participants">
+            <input type="button" id="btn-add-participants" value="Añadir">         
+        </div>
+    </main>
+    <footer class="background-footer">
+        <p class="copyright"> Desarrollado por Minions es mas &copy 2021 </p>
+    </footer>
+
+    <script src="./ts/components/roulette2.ts" type="module"></script>
+    <script src="./ts/app.ts" type="module"></script>
+    <scrip src="./ts/components/roulette.ts" type="module"></scrip> <!-- revisar -->
+</body>
+</html>

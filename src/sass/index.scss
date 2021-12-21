@@ -1,0 +1,34 @@
+@import "participants-list.scss";
+@import "roulette.scss";
+@import "header-footer.scss";
+
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+}
+
+body{
+	background-image: url("../assets/background-img.jpg");
+    background-position: center center;
+    height: 1200px;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header{
+	background: #105d9c93 ;
+    display: flex;
+    /* margin: auto; */
+    justify-content: center;
+    height: 150px;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,24 @@
+template-borders{
+    border-radius: 15px;
+}
+
+.container-participants{
+    @extend template-borders;
+    width: 250px;
+    height: 30px;
+    margin: 7%;
+    background-color: rgba(177, 119, 63, 90%);
+    text-align: center;
+    background-color: none;
+
+    #btn-add-participants{
+        @extend template-borders;
+        padding: 7.5px;
+        background-color:brown;
+        
+    }
+
+    #btn-add-participants:hover{
+        background-color: blue;
+    }
+}
