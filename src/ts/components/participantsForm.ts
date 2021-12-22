@@ -1,15 +1,18 @@
 let participantsList = [];
 const inputAddParticipants = (<HTMLInputElement>document.getElementById('input-add-participants'));
 const btnAddParticipants = (<HTMLInputElement>document.getElementById('btn-add-participants'));
+inputAddParticipants.placeholder = 'Inserta un nombre';
 
 export function addParticipants(){
 
     let participantsValue= inputAddParticipants.value;
+    
 
     if (participantsValue !== '' && participantsList.includes(participantsValue) == false) {
         participantsList.push(participantsValue);
         console.log(participantsList);
         inputAddParticipants.value = '';
+        inputAddParticipants.placeholder = 'Inserta un nombre';
     }else{
         inputAddParticipants.value = '';
         inputAddParticipants.placeholder = 'Inserta un nombre válido';
