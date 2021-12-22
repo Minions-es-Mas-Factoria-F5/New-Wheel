@@ -19,7 +19,7 @@ let participantCoordinates =  participantArea*participantPosition; // posición 
 
 console.log(participantsNumber + ' participantes totales'); 
  
-function printListInRoulette (){
+export function printListInRoulette (){
 
 		for (var i = 0; i < participantsList.length; i++) {
 			context.beginPath();
@@ -39,7 +39,7 @@ function printListInRoulette (){
 }
 printListInRoulette ()
 
-function chooseRandomParticipant () 
+export function chooseRandomParticipant () 
 { 
 	let chosenParticipant = participantsList[Math.floor(Math.random()*participantsList.length)];
 	console.log(chosenParticipant + ' (participante al azar)');
@@ -68,9 +68,12 @@ function chooseRandomParticipant ()
 
 }
 
-startBtn.addEventListener('click', ()=> {
+export function startRoulette(){
+	startBtn.addEventListener('click', ()=> {
 	chooseRandomParticipant ()
 });
+}
+
 
 
 

@@ -1,9 +1,9 @@
 import { list } from "./components/participantsForm";
-import { go } from "./components/roulette2";
+import { startRoulette } from "./components/roulette-recover";
 
 function app(){
-    go();
     list();
+    startRoulette();
 }
 
 app();
