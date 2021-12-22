@@ -1,24 +1,39 @@
-let participantsList = ["Agustín", "Alba", "Ana", "Áxel", "Caio", "Carla",  
-"Christian", "Cristina", "Daniel", "Diego", "Elena", "Emma", "Francisco", "Giacomo", 
-"Heli", "Ignacio", "Ileen", "Irina", "Jorge", "María F.", "María V.", "Marlene", 
-"Migedelis", "Omar", "Rebeca", "Rubén", "Raúl", "Sara", "Sasha", "Vivian"];
+let participantsList = [];
+const inputAddParticipants = (<HTMLInputElement>document.getElementById('input-add-participants'));
+const btnAddParticipants = (<HTMLInputElement>document.getElementById('btn-add-participants'));
+inputAddParticipants.placeholder = 'Inserta un nombre';
 
-let arrayCopy = participantsList;
 
 let canvas=document.getElementById("idcanvas")as HTMLCanvasElement;
 let context=canvas.getContext("2d");
 let center=canvas.width/2;
 
+
+let participantsNumber =  participantsList.length;// nº elementos array = nº participantes
+let participantArea = 360/participantsNumber; //área (grados) que se asigna a cada participante
+
 const startBtn=document.getElementById("start-btn");
 
-let participantsNumber = participantsList.length;// nº elementos array = nº participantes
-let participantPosition = participantsList.indexOf(''); // posición del nombre dado en el array
-let participantArea = 360/participantsNumber; //área (grados) que se asigna a cada participante
-let participantCoordinates =  participantArea*participantPosition; // posición del nombre dado en el canvas ruleta
-/* let whatNameThere = participantsList.charAt(0); / calcula nombre de la posición dada	*/
+export function addParticipants(){
 
-console.log(participantsNumber + ' participantes totales'); 
- 
+    let participantsValue= inputAddParticipants.value;
+    
+    if (participantsValue !== '' && participantsList.includes(participantsValue) == false) {
+        participantsList.push(participantsValue);
+        console.log(participantsList);
+		participantsNumber = participantsList.length;
+		participantArea = 360/participantsNumber;
+		printListInRoulette ();
+		console.log(participantsNumber + ' participantes totales'); 
+        inputAddParticipants.value = '';
+        inputAddParticipants.placeholder = 'Inserta un nombre';
+    }else{
+        inputAddParticipants.value = '';
+        inputAddParticipants.placeholder = 'Inserta un nombre válido';
+        console.log('Not a valid name');
+    }
+}
+
 export function printListInRoulette (){
 
 		for (var i = 0; i < participantsList.length; i++) {
@@ -37,7 +52,7 @@ export function printListInRoulette (){
 			context.restore();
 		} 
 }
-printListInRoulette ()
+
 
 export function chooseRandomParticipant () 
 { 
@@ -67,22 +82,9 @@ export function chooseRandomParticipant ()
 	}
 
 }
-
-export function startRoulette(){
+export function list(){
+    btnAddParticipants.addEventListener('click',addParticipants);
 	startBtn.addEventListener('click', ()=> {
 	chooseRandomParticipant ()
-});
+	})
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

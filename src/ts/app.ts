@@ -1,9 +1,7 @@
-import { list } from "./components/participantsForm";
-import { startRoulette } from "./components/roulette-recover";
+import { list } from "./components/roulette-recover";
 
-function app(){
+export function app(){
     list();
-    startRoulette();
 }
 
 app();
