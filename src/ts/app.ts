@@ -1,12 +1,7 @@
-import {btnCall} from "./components/participantsList";
-import {notRead} from "./components/roulette"; 
+import { list } from "./components/roulette-recover";
 
-
-function app(){
-    btnCall();
-    notRead();
-/*     chooseRandomParticipant(); */
+export function app(){
+    list();
 }
 
 app();
-
